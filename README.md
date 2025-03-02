@@ -26,7 +26,8 @@ c. Mix_Thread_Process.py
 - compare_QThread.py: thay đổi window: MainWindow = MainWindow(5) trc khi chạy
 - Mix_Thread_Process.py: thay đổi window = MainWindow(5) trong file multiThread_for_MultiProces.py và window = MonitorWindow(2) trong Mix_Thread_Process.py trc khi chạy
 ## 3. Đánh giá
-# Đánh giá hiệu suất của MultiProcess, MultiThread, Mix Thread and Process
+Link báo cáo: https://docs.google.com/document/d/1YCd4vDJFnISj0Dy5Ep2XLPx6E3_n_PhP-FbCkvwLo4E/edit?usp=sharing 
+### Đánh giá hiệu suất của MultiProcess, MultiThread, Mix Thread and Process
 
 | Số Thread | Phương thức              | CPU sử dụng (%) | RAM sử dụng (%) | FPS trung bình |
 |-----------|--------------------------|------------------|----------------|---------------|
