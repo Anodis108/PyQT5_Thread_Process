@@ -112,6 +112,21 @@ class VideoPlayerWidget(QWidget):
 
         self.setLayout(self.layout)
 
+    def setup_worker(self) -> None:
+        """✅ Khởi tạo Worker và QThread cho video"""
+        self.thread: QThread = QThread()
+        self.worker: VideoWorker = VideoWorker(self.video_path)
+        self.worker.moveToThread(self.thread)
+
+        self.thread.started.connect(self.worker.run)
+        self.worker.frame_updated.connect(self.update_frame)
+        self.worker.fps_updated.connect(self.update_fps)
+        self.worker.finished.connect(self.thread.quit)
+        self.worker.finished.connect(self.worker.deleteLater)
+        self.thread.finished.connect(self.thread.deleteLater)
+
+        # ✅ Tự động khởi chạy video ngay khi ứng dụng khởi động
+        self.thread.start()
         self.play_button.setText("Pause")
         
     def toggle_video(self) -> None:

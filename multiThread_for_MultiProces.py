@@ -180,6 +180,6 @@ class MainWindow(QMainWindow):
 # ✅ Chạy ứng dụng
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = MainWindow(10)
+    window = MainWindow(5)
     window.show()
     sys.exit(app.exec_())
